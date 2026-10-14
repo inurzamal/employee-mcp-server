@@ -15,6 +15,6 @@ class McpToolConfigurationTest {
         var provider = new McpToolConfiguration()
                 .employeeToolCallbackProvider(new EmployeeTools(employeeService));
 
-        assertThat(provider.getToolCallbacks()).hasSize(6);
+        assertThat(provider.getToolCallbacks()).hasSize(7);
     }
 }

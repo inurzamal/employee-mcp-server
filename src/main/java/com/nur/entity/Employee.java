@@ -30,20 +30,37 @@ public class Employee {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(name = "job_role")
+    private String role;
+
+    @Column(length = 1000)
+    private String skills;
+
+    @Column(length = 1000)
+    private String bio;
+
     public Employee() {
     }
 
     public Employee(Long id, String name, String department, String email) {
+        this(id, name, department, email, null, null, null);
+    }
+
+    public Employee(String name, String department, String email) {
+        this(null, name, department, email, null, null, null);
+    }
+
+    public Employee(String name, String department, String email, String role, String skills, String bio) {
+        this(null, name, department, email, role, skills, bio);
+    }
+
+    public Employee(Long id, String name, String department, String email, String role, String skills, String bio) {
         this.id = id;
         this.name = name;
         this.department = department;
         this.email = email;
+        this.role = role;
+        this.skills = skills;
+        this.bio = bio;
     }
-
-    public Employee(String name, String department, String email) {
-        this.name = name;
-        this.department = department;
-        this.email = email;
-    }
-
 }
